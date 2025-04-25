@@ -14,7 +14,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { UploadCloud, CheckCircle } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useNavigate } from "react-router-dom";
 import DashboardHeader from "@/components/header";
+import AIAgentChat from "@/components/AIAgentChat";
 
 const steps = [
   "Set Up Business Profile",
@@ -44,6 +46,7 @@ const DashboardPage = () => {
   const [responseStyle, setResponseStyle] = useState("");
   const [businessNameError, setBusinessNameError] = useState(false);
 
+  const navigate = useNavigate();
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -160,8 +163,9 @@ const DashboardPage = () => {
 
     storedData.push(newProfile);
     localStorage.setItem("businessProfiles", JSON.stringify(storedData));
+    
     alert("Business profile saved!");
-    handleNext(); // Move to the next step after successful save
+    navigate("/dashboard"); 
   };
 
   const namechecker = () => {
