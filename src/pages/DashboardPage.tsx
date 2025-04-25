@@ -11,7 +11,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { UploadCloud, CheckCircle } from "lucide-react";
+import { UploadCloud, CheckCircle, Bell, User } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useNavigate } from "react-router-dom";
@@ -184,7 +184,6 @@ const DashboardPage = () => {
   };
 
   const renderStepContent = () => {
-    <header />;
     switch (currentStep) {
       case 0:
         return (
@@ -763,6 +762,7 @@ const DashboardPage = () => {
 
   return (
     <div className="flex h-screen">
+      
       <div className="flex-1 p-10 bg-gray-50 overflow-y-auto text-gray-800">
         <div className="flex">
           <div className="w-1/4 bg-white p-6 rounded-xl shadow-sm">
@@ -793,7 +793,9 @@ const DashboardPage = () => {
               </div>
             ))}
           </div>
-          <div className="w-3/4 pl-10">{renderStepContent()}</div>
+          <div className="w-3/4 pl-10">
+          
+          {renderStepContent()}</div>
         </div>
       </div>
     </div>
