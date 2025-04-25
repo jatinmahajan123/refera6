@@ -1,6 +1,6 @@
 import NewPromoterModal from "./NewPromotersmodal";
 import { useState } from "react";
-import { Eye, MessageSquare } from "lucide-react";
+import { Bell, Eye, MessageSquare, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const PromotersView = () => {
@@ -103,10 +103,22 @@ const PromotersView = () => {
 
   return (
     <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-semibold">
-          Manage and monitor your promoter referral activities
-        </h1>
+      <div className="flex items-center justify-between mb-6 ">
+        <div className="flex items-center gap-2 text-sm text-black-500 cursor-pointer ">
+          <h1 className="text-2xl font-bold mb-6 mt-2">
+            Manage and Monitor your Payouts
+          </h1>
+        </div>
+        <div className="flex items-center gap-4 mr-8">
+          <Bell className="w-5 h-5 text-gray-400" />
+          <div className="flex items-center gap-2">
+            <User className="w-6 h-6 rounded-full bg-gray-200 p-1" />
+            <div className="text-sm">
+              <p className="font-semibold text-gray-700">Kadin Stanton</p>
+              <p className="text-gray-400 text-xs">kadinstanton@gmail.com</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="flex items-center gap-4 mb-6">
